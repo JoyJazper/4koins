@@ -1,0 +1,10 @@
+
+{% if stores%}
+    <ul>
+        {% for store in Stores %}
+            <li><a href="/App1/{{ store.id }}/">{{ store.storeName }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3>Youi don't have any stores available yet! Sorry!</h3>
+{% endif %}
