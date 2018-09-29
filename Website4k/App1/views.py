@@ -1,15 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Users, Stores, Products, OrdersList, OrderData
+from .models import Users
+from .models import Stores
+from .models import Products
+from .models import OrdersList
+from .models import OrderData
 
 # Create your views here.
 def index(request):
+    listUser = Users.objects.all()
     listStores = Stores.objects.all()
     html = ''
-    template = loader.get_template('templates/App1/index.html')
+    template = loader.get_template('App1/index.html')
     context = {
-        'Stores': Stores,
+        'Stores': listStores,
     }
     for store in listStores:
         url = '/App1/'+ str(store.id) + '/'
