@@ -2,7 +2,7 @@
 {% if Stores%}
     <ul>
         {% for store in Stores %}
-            <li><a href="/App1/{{ store.id }}/">{{ store.storeName }}</a></li>
+            <li><a href="{% url 'StoresApp1:ProductPanel' store.storeID %}">{{ store.storeName }}</a></li>
         {% endfor %}
     </ul>
 {% else %}

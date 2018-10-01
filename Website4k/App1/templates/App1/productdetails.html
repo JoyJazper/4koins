@@ -1,0 +1,14 @@
+/=-0876543210/{{ StoreD }}
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+<form action="{% 'StoresApp1:cartPanel' %}" method="POST">
+    {% csrf_token %}
+    {% for productn in StoreD.all %}
+        <input type="checkbox" id="productn{{ forloop.counter }}" name="productn" value="productn.productID
+        +=-"
+    {% endfor %}
+    <button type="submit">Sign up</button>
+
+</form>

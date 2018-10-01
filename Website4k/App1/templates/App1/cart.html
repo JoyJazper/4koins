@@ -1,0 +1,10 @@
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+<form action="{% 'StoresApp1:cartPanel' %}" method="POST">
+    {% csrf_token %}
+        {{ products }}
+    <button type="submit">Sign up</button>
+
+</form>
